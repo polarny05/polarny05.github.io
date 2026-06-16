@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>polarny</title>
+
+  <title>Polarny</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -16,26 +21,29 @@
         radial-gradient(circle at bottom right, #06b6d4, transparent 35%),
         #0f0f14;
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 24px;
+      padding: 32px 18px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 680px;
     }
 
     .card {
       width: 100%;
-      max-width: 520px;
-      background: rgba(20, 20, 30, 0.82);
+      background: rgba(20, 20, 30, 0.84);
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: 28px;
-      padding: 36px 28px;
+      padding: 34px 26px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.45);
       backdrop-filter: blur(12px);
+      text-align: center;
     }
 
     .pfp {
-      width: 120px;
-      height: 120px;
+      width: 124px;
+      height: 124px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
@@ -43,22 +51,62 @@
     }
 
     h1 {
-      font-size: 44px;
+      font-size: 46px;
       margin: 0;
       letter-spacing: -1px;
     }
 
     .tagline {
-      color: #d6d6e7;
-      margin: 12px 0 24px;
+      color: #deddf0;
+      margin: 12px 0 22px;
       line-height: 1.5;
+      font-size: 16px;
     }
 
     .bio {
-      color: #bdbdd1;
+      color: #c7c6d8;
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin: 0 auto 28px;
+      max-width: 560px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin-bottom: 28px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 12px 10px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+
+    .stat span {
+      color: #aaa9bd;
+      font-size: 12px;
+    }
+
+    .section {
+      margin-top: 22px;
+      text-align: left;
+    }
+
+    .section-title {
+      font-size: 14px;
+      color: #aaa9bd;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 10px 4px;
     }
 
     .links {
@@ -67,13 +115,15 @@
     }
 
     .button {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       text-decoration: none;
       color: white;
-      background: rgba(255,255,255,0.11);
+      background: rgba(255,255,255,0.10);
       border: 1px solid rgba(255,255,255,0.16);
-      padding: 15px 18px;
-      border-radius: 14px;
+      padding: 15px 16px;
+      border-radius: 16px;
       font-weight: bold;
       transition: 0.2s ease;
     }
@@ -83,44 +133,259 @@
       background: rgba(255,255,255,0.18);
     }
 
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .button-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.12);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .button-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .button-text small {
+      color: #aaa9bd;
+      font-weight: normal;
+      line-height: 1.3;
+    }
+
     .primary {
       background: linear-gradient(135deg, #9146ff, #00d5ff);
       border: none;
     }
 
+    .adult {
+      background: linear-gradient(135deg, #ff4fd8, #9146ff);
+      border: none;
+    }
+
+    .warning {
+      margin-top: 10px;
+      color: #bdbdd1;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
     .footer {
-      margin-top: 24px;
+      margin-top: 26px;
       color: #8d8da3;
       font-size: 13px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: #bdbdd1;
+      text-decoration: none;
+    }
+
+    @media (max-width: 560px) {
+      .card {
+        padding: 28px 18px;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        padding: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="card">
-    <img class="pfp" src="https://polarny05.github.io/pfp.png" alt="Polarny profile picture">
+  <main class="page">
+    <section class="card">
+      <img class="pfp" src="./pfp.png" alt="Polarny profile picture">
 
-    <h1>Polarny</h1>
+      <h1>Polarny</h1>
 
-    <p class="tagline">
-      Variety Streamer • Creator • Physics Student
-    </p>
+      <p class="tagline">
+        Variety Streamer • Creator • Physics Student
+      </p>
 
-    <p class="bio">
-      I make gaming, chatting, and community-focused content across Twitch and other platforms. 
-      Expect multiplayer chaos, questionable decisions, and occasional actual intelligence.
-    </p>
+      <p class="bio">
+        I make gaming, chatting, and community-focused content across Twitch and other platforms.
+        Expect multiplayer chaos, questionable decisions, travel stories, and occasional moments of actual competence.
+      </p>
 
-    <div class="links">
-      <a class="button primary" href="https://twitch.tv/polarny05">Watch me on Twitch</a>
-      <a class="button" href="https://x.com/polarny05">Follow me on X</a>
-      <a class="button" href="https://www.youtube.com/@polarny05">YouTube</a>
-      <a class="button" href="mailto:polarny05.business@gmail.com">Business Enquiries</a>
-    </div>
+      <div class="stats">
+        <div class="stat">
+          <strong>900+</strong>
+          <span>Twitch Followers</span>
+        </div>
 
-    <div class="footer">
-      polarny05.com
-    </div>
+        <div class="stat">
+          <strong>Creator</strong>
+          <span>Gaming & Chatting</span>
+        </div>
+
+        <div class="stat">
+          <strong>Physics</strong>
+          <span>Student</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🔞 Adult Content</h2>
+
+        <div class="links">
+          <a class="button adult" href="https://onlyfans.com/polarny05">
+            <span class="button-icon">🔞</span>
+            <span class="button-text">
+              OnlyFans
+              <small>Exclusive 18+ content</small>
+            </span>
+          </a>
+
+          <a class="button" href="https://chaturbate.com/in/?tour=ZQAI&campaign=I9DU0&track=default&room=polarny05">
+            <span class="button-icon">📹</span>
+            <span class="button-text">
+              CB Room
+              <small>Live adult streams</small>
+            </span>
+          </a>
+        </div>
+
+        <p class="warning">
+          Adult links are intended for 18+ visitors only.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🎮 Content</h2>
+
+        <div class="links">
+          <a class="button primary" href="https://twitch.tv/polarny05">
+            <span class="button-icon">🟣</span>
+            <span class="button-text">
+              Twitch
+              <small>Gaming, chatting, and live chaos</small>
+            </span>
+          </a>
+
+          <a class="button" href="https://www.youtube.com/@polarny05">
+            <span class="button-icon">▶️</span>
+            <span class="button-text">
+              YouTube
+              <small>Videos, clips, and highlights</small>
+            </span>
+          </a>
+
+          <a class="button" href="https://www.tiktok.com/@polarny05">
+            <span class="button-icon">🎵</span>
+            <span class="button-text">
+              TikTok
+              <small>Short-form content</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🌐 Socials</h2>
+
+        <div class="links">
+          <a class="button" href="https://x.com/polarny05">
+            <span class="button-icon">𝕏</span>
+            <span class="button-text">
+              X / Twitter
+              <small>Posts, updates, and nonsense</small>
+            </span>
+          </a>
+
+          <a class="button" href="https://bsky.app/profile/polarny05.bsky.social">
+            <span class="button-icon">🦋</span>
+            <span class="button-text">
+              Bluesky
+              <small>Backup social account</small>
+            </span>
+          </a>
+
+          <a class="button" href="https://www.reddit.com/user/ttv_polarny05/">
+            <span class="button-icon">👽</span>
+            <span class="button-text">
+              Reddit
+              <small>Posts and community stuff</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">💬 Community</h2>
+
+        <div class="links">
+          <a class="button" href="https://discord.gg/yarhJdhVE9">
+            <span class="button-icon">💬</span>
+            <span class="button-text">
+              Discord
+              <small>Join the community</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🎁 Support</h2>
+
+        <div class="links">
+          <a class="button" href="https://throne.com/polarny05">
+            <span class="button-icon">🎁</span>
+            <span class="button-text">
+              Wishlist
+              <small>Throne gifts and wishlist</small>
+            </span>
+          </a>
+
+          <a class="button" href="https://www.paypal.com/paypalme/polarnytwink">
+            <span class="button-icon">💸</span>
+            <span class="button-text">
+              PayPal
+              <small>Tips and support</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">📩 Business</h2>
+
+        <div class="links">
+          <a class="button" href="mailto:polarny05.business@gmail.com">
+            <span class="button-icon">✉️</span>
+            <span class="button-text">
+              Business Enquiries
+              <small>Collabs, sponsorships, and creator work</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        © 2026 Polarny<br>
+        <a href="mailto:polarny05.business@gmail.com">polarny05.business@gmail.com</a>
+      </footer>
+    </section>
   </main>
 </body>
 </html>
