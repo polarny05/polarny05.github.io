@@ -1,23 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Polarny</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polarny</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+      background:
+        radial-gradient(circle at top left, #8b5cf6, transparent 35%),
+        radial-gradient(circle at bottom right, #06b6d4, transparent 35%),
+        #0f0f14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(20, 20, 30, 0.82);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      backdrop-filter: blur(12px);
+    }
+
+    .pfp {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 44px;
+      margin: 0;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      color: #d6d6e7;
+      margin: 12px 0 24px;
+      line-height: 1.5;
+    }
+
+    .bio {
+      color: #bdbdd1;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .button {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 15px 18px;
+      border-radius: 14px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.18);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, #9146ff, #00d5ff);
+      border: none;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: #8d8da3;
+      font-size: 13px;
+    }
+  </style>
 </head>
-<body style="background:#111;color:white;font-family:Arial;text-align:center;padding-top:100px;">
+
+<body>
+  <main class="card">
+    <img class="pfp" src="https://static-cdn.jtvnw.net/jtv_user_pictures/040e01df-1127-4e58-83d0-882aa73a6d4e-profile_image-300x300.png" alt="Polarny profile picture">
 
     <h1>Polarny</h1>
 
-    <p>Variety Streamer • Creator • Physics Student</p>
-
-    <br>
-
-    <p>
-        <a href="https://twitch.tv/polarny05">Twitch</a>
-        |
-        <a href="https://x.com/polarny05">X</a>
-        |
-        <a href="mailto:polarny05.business@gmail.com">Contact</a>
+    <p class="tagline">
+      Variety Streamer • Creator • Physics Student
     </p>
 
+    <p class="bio">
+      I make gaming, chatting, and community-focused content across Twitch and other platforms. 
+      Expect multiplayer chaos, questionable decisions, and occasional actual intelligence.
+    </p>
+
+    <div class="links">
+      <a class="button primary" href="https://twitch.tv/polarny05">Watch me on Twitch</a>
+      <a class="button" href="https://x.com/polarny05">Follow me on X</a>
+      <a class="button" href="https://www.youtube.com/@polarny05">YouTube</a>
+      <a class="button" href="mailto:polarny05.business@gmail.com">Business Enquiries</a>
+    </div>
+
+    <div class="footer">
+      polarny05.com
+    </div>
+  </main>
 </body>
 </html>
